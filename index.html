@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Amilton Lucas" />
+    <meta name="creator" content="Front Dev Studio" />
+    <link rel="stylesheet" href="src/style/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="shortcut icon"
+      href="src/images/icons/Burguer-logo-transparente.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="src/js/script.js"></script>
+    <title>Burger Town</title>
+  </head>
+  <body>
+    <header id="home">
+      <article>
+        <nav class="navbar bg-body-tertiary fixed-top" id="navMobile">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="">
+              <img
+                src="src/images/icons/Burguer-logo-preto-transparente.png"
+                alt="Logo"
+                width="30"
+                height="24"
+                class="d-inline-block align-text-top"
+              />
+              Burguer Town
+            </a>
+            <button class="cart-button">
+              <img src="src/images/icons/cart.svg" alt="" />
+            </button>
+
+            <div class="cart-overlay" id="cartOverlay">
+              <div class="cart" id="cart">
+                <button class="close-cart-x">&times;</button>
+                <h2>Seu Carrinho</h2>
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                  Total: R$ <span id="cartTotal">0.00</span>
+                </div>
+                <button class="close-cart">Continuar</button>
+              </div>
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  <a class="navbar-brand" href="">
+                    <img
+                      src="src/images/icons/Burguer-logo-transparente.png"
+                      alt="Logo"
+                      width="64"
+                      height="64"
+                      class="d-inline-block align-text-top"
+                    />
+                  </a>
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home"
+                      ><img src="src/images/icons/casa.png" alt="" /> Home</a
+                    >
+                  </li>
+                  <br />
+                  <li class="nav-item">
+                    <a class="nav-link" href="#hamburguer"
+                      ><img src="src/images/icons/hamburguer.png" alt="" />
+                      Hambúrgueres</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#combos"
+                      ><img src="src/images/icons/negocios.png" alt="" />
+                      Combos</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#acompanhamentos"
+                      ><img src="src/images/icons/batatas-fritas.png" alt="" />
+                      Acompanhamentos</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#refrigerante"
+                      ><img
+                        src="src/images/icons/refrigerantes.png"
+                        alt=""
+                      />Refigerantes</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#milkshake"
+                      ><img src="src/images/icons/milkshake.png" alt="" />
+                      MilkShakes</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#promos"
+                      ><img src="src/images/icons/promocoes.png" alt="" />
+                      Promoções</a
+                    >
+                  </li>
+                  <br />
+                  <li class="nav-item">
+                    <a class="nav-link" aria-disabled="true" href="#Contato"
+                      ><img src="src/images/icons/contato.png" alt="" />
+                      Contato</a
+                    >
+                  </li>
+                  <li class="developer">
+                    <a
+                      class="nav-link"
+                      aria-disabled="true"
+                      href="https://github.com/FrontDevStudio1"
+                      target="_blank"
+                      ><img src="src/images/icons/LogoFrontDev.png" alt="" />
+                      FrontDevStudio &copy;
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div
+          id="carouselExampleSlidesOnly"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="src/images/icons/banner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+        </div>
+      </article>
+    </header>
+
+    <main>
+      <article>
+        <section class="menu" id="Cardapio">
+          <h1>Menu</h1>
+          <h2 id="hamburguer">hambúrgueres</h2>
+          <div class="cardsProducts">
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/Hamburguer-do-chefe.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>A moda do chefe</h3>
+                <p>R$ 22,00</p>
+                <button data-name="A moda do chefe" data-price="22.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/Hamburguer-Smach.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Smach Burguer</h3>
+                <p>R$ 25,00</p>
+                <button data-name="Smach Burguer" data-price="25.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/Hamburguer-x-bacon.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>X Bacon</h3>
+                <p>R$ 24,00</p>
+                <button data-name="X Bacon" data-price="24.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/Hamburguer-x-salada.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>X Salada</h3>
+                <p>R$ 18,00</p>
+                <button data-name="X Salada" data-price="18.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <h2 id="combos">Combos</h2>
+          <div class="cardsProducts">
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/combo-1.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Dupla Perfeita</h3>
+                <p>R$ 32,90</p>
+                <button data-name="Combo Dupla Perfeita" data-price="32.90">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/combo-2.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Universitário</h3>
+                <p>R$ 39,90</p>
+                <button data-name="Combo Universitário" data-price="39.90">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/combo-3.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Mix</h3>
+                <p>R$ 15,90</p>
+                <button data-name="Combo Mix" data-price="15.90">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/combo-4.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Namorados</h3>
+                <p>R$ 30,90</p>
+                <button data-name="Combo Namorados" data-price="30.90">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <h2 id="acompanhamentos">Acompanhamentos</h2>
+          <div class="cardsProducts">
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/batata-frita.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Batata Frita</h3>
+                <p>R$ 14,00</p>
+                <button data-name="Batata Frita" data-price="14.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/batata-chips.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Batata Chips</h3>
+                <p>R$ 16,00</p>
+                <button data-name="Batata Chips" data-price="16.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/batata-rustica.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Batata Rustica</h3>
+                <p>R$ 18,00</p>
+                <button data-name="Batata Rustica" data-price="18.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/batata-completa.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Batata Completa</h3>
+                <p>R$ 22,00</p>
+                <button data-name="Batata Completa" data-price="22.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <h2 id="refrigerante">Refrigerantes</h2>
+          <div class="cardsProducts" id="refri">
+            <div class="product">
+              <div class="imageBox">
+                <img
+                  src="src/images/products/coca-lata.png"
+                  alt="lata"
+                  id="litragem-image"
+                />
+              </div>
+
+              <div class="textBox">
+                <h3>Coca Cola</h3>
+                <p id="product-price">R$ 5,00</p>
+                <label for="litragem"></label>
+                <select id="litragem" onchange="updateProduct()">
+                  <option value="lata">350ml</option>
+                  <option value="600">600ml</option>
+                  <option value="1l">1 Litro</option>
+                  <option value="2l">2 Litros</option>
+                </select>
+                <button
+                  id="add-to-cart"
+                  data-name="Coca Cola 350ml"
+                  data-price="5.00"
+                >
+                  Adicionar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img
+                  src="src/images/products/pepsi-lata.png"
+                  alt="lata"
+                  id="pepsi-image"
+                />
+              </div>
+
+              <div class="textBox">
+                <h3>Pepsi</h3>
+                <p id="pepsi-price">R$ 4,50</p>
+                <label for="pepsi-litragem"></label>
+                <select id="pepsi-litragem" onchange="updatePepsi()">
+                  <option value="lata">350ml</option>
+                  <option value="600">600ml</option>
+                  <option value="1l">1 Litro</option>
+                  <option value="2l">2 Litros</option>
+                </select>
+                <button
+                  id="add-to-cart-pepsi"
+                  data-name="Pepsi 350ml"
+                  data-price="5.00"
+                >
+                  Adicionar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img
+                  src="src/images/products/guarana-lata.png"
+                  alt="lata"
+                  id="guarana-image"
+                />
+              </div>
+
+              <div class="textBox">
+                <h3>Guaraná</h3>
+                <p id="guarana-price">R$ 5,00</p>
+                <label for="guarana-litragem"></label>
+                <select id="guarana-litragem" onchange="updateGuarana()">
+                  <option value="lata">350ml</option>
+                  <option value="600">600ml</option>
+                  <option value="1l">1 Litro</option>
+                  <option value="2l">2 Litros</option>
+                </select>
+                <button
+                  id="add-to-cart-guarana"
+                  data-name="Guaraná 350ml"
+                  data-price="5.00"
+                >
+                  Adicionar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img
+                  src="src/images/products/fanta-lata.png"
+                  alt="lata"
+                  id="fanta-image"
+                />
+              </div>
+
+              <div class="textBox">
+                <h3>Fanta Laranja</h3>
+                <p id="fanta-price">R$ 5,00</p>
+                <label for="fanta-litragem"></label>
+                <select id="fanta-litragem" onchange="updateFanta()">
+                  <option value="lata">350ml</option>
+                  <option value="600">600ml</option>
+                  <option value="1l">1 Litro</option>
+                  <option value="2l">2 Litros</option>
+                </select>
+                <button
+                  id="add-to-cart-fanta"
+                  data-name="Fanta Laranja 350ml"
+                  data-price="5.00"
+                >
+                  Adicionar ao carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <h2>Milkshakes</h2>
+          <div class="cardsProducts" id="milkshake">
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/milkshake-morango.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Morango</h3>
+                <p>400ml</p>
+                <p>R$ 16,00</p>
+                <button data-name="Milkshake Morango" data-price="16.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/milkshake-chocolate.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Chocolate</h3>
+                <p>400ml</p>
+                <p>R$ 16,00</p>
+                <button data-name="Milkshake Chocolate" data-price="16.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/milkshake-baunilha.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Baunilha</h3>
+                <p>400ml</p>
+                <p>R$ 16,00</p>
+                <button data-name="Milkshake Baulinha" data-price="16.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/milkshake-oreo.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Oreo</h3>
+                <p>400ml</p>
+                <p>R$ 18,00</p>
+                <button data-name="Milkshake Oreo" data-price="18.00">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <h2>Promoções</h2>
+          <div class="cardsProducts" id="promos">
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/promo-1.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Trio da fome</h3>
+                <p>
+                  1x hambuguer <br />
+                  1x milkshake <br />
+                  1x batata
+                </p>
+                <p>R$ 31,90</p>
+                <button data-name="Trio da fome" data-price="31.90">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="imageBox">
+                <img src="src/images/products/promo-2-familia.png" alt="" />
+              </div>
+
+              <div class="textBox">
+                <h3>Promo familía</h3>
+                <p>
+                  4x hambuguer <br />
+                  1x Coca cola 2l <br />
+                  1x batata
+                </p>
+                <p>R$ 89,90</p>
+                <button data-name="Promo familía" data-price="89.90">
+                  Adiconar ao carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <div class="container">
+        <article>
+          <section class="contacts" id="contacts">
+            <h3>Contatos</h3>
+            <div class="contact">
+              <strong>Telefone</strong>
+              <p>(88) 9968-4228</p>
+            </div>
+
+            <div class="contact">
+              <strong>Email</strong>
+              <p>BurguerTown@gmail.com</p>
+            </div>
+
+            <div class="socialMedias">
+              <a href="https://www.instagram.com/frontdevstudio/">
+                <div class="logo">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <strong>WhatsApp</strong>
+              </a>
+
+              <a href="https://www.instagram.com/frontdevstudio/">
+                <div class="logo">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <strong>Instagram</strong>
+              </a>
+            </div>
+          </section>
+
+          <section class="local">
+            <h3>Localização</h3>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15855.507778934969!2d-39.50613365135667!3d-6.537220945288166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a2f77b5a22e3c9%3A0xcdfd5f06f57592f5!2sCari%C3%BAs%2C%20CE%2C%2063530-000!5e0!3m2!1spt-BR!2sbr!4v1720699355885!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+            <p>Cariús, 63530-000</p>
+          </section>
+        </article>
+      </div>
+
+      <div class="help">
+        <a href="#home">Início</a>
+        <a href="https://front-dev-studio.vercel.app/" target="_blank">Ajuda</a>
+        <a href="https://front-dev-studio.vercel.app/" target="_blank">Termos de uso</a>
+      </div>
+
+      <div class="copyright">
+        <a href="https://front-dev-studio.vercel.app/" target="_blank">
+          <strong>&copy; Front Dev Studio</strong>
+        </a>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
